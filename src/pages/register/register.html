@@ -1,0 +1,69 @@
+<ion-header>
+
+  <ion-navbar>
+      <ion-buttons start>
+          <button ion-button icon-only menuToggle>
+            <ion-icon name="menu"></ion-icon>
+          </button>
+        </ion-buttons>
+    <ion-title>Register</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+  <form #f="ngForm" (ngSubmit)="onRegister(f, name.value)">
+    <ion-list>
+      <ion-item>
+        <ion-label fixed>Name</ion-label>
+        <ion-input
+          type="text"
+          ngModel
+          name="name"
+          required
+          placeholder="GI Joe"
+          #name></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label fixed>Username</ion-label>
+        <ion-input
+          type="text"
+          ngModel
+          name="username"
+          required
+          placeholder="GI Joe"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label fixed>Email</ion-label>
+        <ion-input
+          type="email"
+          ngModel
+          name="email"
+          required
+          placeholder="GIJoe@Gmail.com"
+          pattern="[A-Za-z0-9._%+-]{3,}@[a-zA-Z]{3,}([.]{1}[a-zA-Z]{2,}|[.]{1}[a-zA-Z]{2,}[.]{1}[a-zA-Z]{2,})"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label fixed>Phone</ion-label>
+        <ion-input
+          type="number"
+          ngModel
+          name="phone"
+          placeholder="1234567890"
+          [minlength]="10"
+          [maxlength]="10"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label fixed>Password</ion-label>
+        <ion-input
+          type="password"
+          ngModel
+          name="password"
+          required
+          [minlength]="8"
+          placeholder="At least 8 Characters"></ion-input>
+      </ion-item>
+    </ion-list>
+    <button ion-button block color="secondary" type="submit" [disabled]="!f.valid">Register</button>
+  </form>
+</ion-content>

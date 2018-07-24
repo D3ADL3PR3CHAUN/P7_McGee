@@ -1,0 +1,25 @@
+<ion-header>
+
+  <ion-navbar>
+      <ion-buttons start>
+          <button ion-button icon-only menuToggle>
+            <ion-icon name="menu"></ion-icon>
+          </button>
+        </ion-buttons>
+    <ion-title>Thanks</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-card>
+    <ion-card-header text-wrap>
+      <h2>Registration is complete!</h2>
+      <h2><p>Thanks for signing up {{ name }}</p></h2>
+    </ion-card-header>
+    <ion-card-content>
+      <button ion-button color="secondary" round (click)="onOrder()">Continue</button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
